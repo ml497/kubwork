@@ -1,0 +1,30 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: chatbackend-slave
+spec:
+  selector:
+    matchLabels:
+      app: chatbackend
+      role: slave
+      tier: backend
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: chatbackend
+        role: slave
+        tier: backend
+    spec:
+      containers:
+      - name: slave
+        image: maisoul/kubchatbackend:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: 6379
