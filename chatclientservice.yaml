@@ -12,7 +12,10 @@ spec:
   # an external load-balanced IP for the frontend service.
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 5001
+    targetPort: 80
+    protocol: TCP
+    name: http
   selector:
     app: chatclient
     tier: frontend
