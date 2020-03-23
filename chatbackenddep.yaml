@@ -13,7 +13,7 @@ spec:
         app: chatbackend
     spec:
       containers:
-      - name: slave
+      - name: kubchatbackend
         image: maisoul/kubchatbackend:latest
         resources:
           requests:
