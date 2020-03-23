@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: chatclient
   labels:
     app: chatclient
     tier: frontend
