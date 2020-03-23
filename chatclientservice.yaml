@@ -10,14 +10,14 @@ spec:
   # type: NodePort
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
-  type: NodePort
+  type: LoadBalancer
   ports:
-  - port: 5001
-    nodePort: 80
+  - port: 80
+    targetPort: 5001
     protocol: TCP
     name: http
-  - port: 5001
-    nodePort: 443
+  - port: 443
+    targetPort: 5001
     protocol: TCP
     name: https
   selector:
