@@ -13,7 +13,7 @@ spec:
   # an external load-balanced IP for the frontend service.
   type: LoadBalancer
   ports:
-  - port: 5000
+  - port: 5002
     targetPort: 5000
     protocol: TCP
     name: http
