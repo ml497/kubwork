@@ -5,8 +5,22 @@ metadata:
   name: chatbackend
   labels:
     app: chatbackend
+    tier: backend
 spec:
+  # comment or delete the following line if you want to use a LoadBalancer
+  # type: NodePort
+  # if your cluster supports it, uncomment the following to automatically create
+  # an external load-balanced IP for the frontend service.
+  type: LoadBalancer
   ports:
   - port: 5000
+    targetPort: 5000
+    protocol: TCP
+    name: http
+  - port: 5000
+    targetPort: 5000
+    protocol: TCP
+    name: https
   selector:
     app: chatbackend
+    tier: backend

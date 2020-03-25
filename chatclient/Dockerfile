@@ -1,19 +1,24 @@
-FROM ubuntu:16.04
+# FROM ubuntu:18.04
 
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
+# RUN apt-get update -y && \
+#     apt-get install -y python-pip python-dev
 
-# We copy just the requirements.txt first to leverage Docker cache
+# # We copy just the requirements.txt first to leverage Docker cache
+# COPY ./requirements.txt /app/requirements.txt
+
+# WORKDIR /app
+
+# RUN pip install -r requirements.txt
+
+# COPY . /app
+
+# CMD [ "python", "chat.py" ]
+
+
+FROM python:3.4
 COPY ./requirements.txt /app/requirements.txt
-
 WORKDIR /app
-
 RUN pip install -r requirements.txt
-
 COPY . /app
-
-EXPOSE 5001
-
-ENTRYPOINT [ "python" ]
-
-CMD [ "chat.py" ]
+ENTRYPOINT ["python"]
+CMD ["chat.py"]
