@@ -6,7 +6,7 @@
         <script type="text/javascript" charset="utf-8">
             var socket;
             $(document).ready(function(){
-                socket = io.connect('http://' + document.domain + ':' + '5000' + '/chat');
+                socket = io.connect('http://' +  + '104.199.76.170:' + '5002' + '/chat');
                 socket.on('connect', function() {
                     socket.emit('joined', {});
                 });
