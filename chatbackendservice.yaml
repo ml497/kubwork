@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: chatbackend
   labels:
-    app: chatbackend
+    app: chat
     tier: backend
 spec:
   # comment or delete the following line if you want to use a LoadBalancer
@@ -17,5 +17,5 @@ spec:
     protocol: TCP
     name: http
   selector:
-    app: chatbackend
+    app: chat
     tier: backend

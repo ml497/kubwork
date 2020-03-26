@@ -5,13 +5,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: chatclient
+      app: chat
       tier: frontend
   replicas: 1
   template:
     metadata:
       labels:
-        app: chatclient
+        app: chat
         tier: frontend
     spec:
       containers:

@@ -5,13 +5,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: chatbackend
+      app: chat
       tier: backend
   replicas: 1
   template:
     metadata:
       labels:
-        app: chatbackend
+        app: chat
         tier: backend
     spec:
       containers:
