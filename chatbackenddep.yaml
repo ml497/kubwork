@@ -6,11 +6,13 @@ spec:
   selector:
     matchLabels:
       app: chatbackend
+      tier: backend
   replicas: 1
   template:
     metadata:
       labels:
         app: chatbackend
+        tier: backend
     spec:
       containers:
       - name: kubchatbackend
